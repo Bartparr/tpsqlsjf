@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>ajout d'immigré</title>
+        <h:outputStylesheet library="dark" name="css/principal.css"/>
+    </h:head>
+    <h:body>
+        
+        <c:if test="#{profileBean.header=='yes'}">
+           <ui:insert name="header"/>
+           <ui:include src="template/header.xhtml"></ui:include>     
+        </c:if>
+       
+        
+        <div id="form-wrapper" class="myform">
+            <h1>Login </h1>
+            <br/>
+        <hr/>
+        <h:form>
+           <h:outputLabel for="name"> Nom </h:outputLabel>
+           <h:inputText id="name" value="#{name}" />
+           <br/>
+           <h:outputLabel for="surname"> Mot de passe </h:outputLabel>
+           <h:inputSecret id="surname" value="#{password}" />
+           <br/>
+           <br/>
+           <br/>
+           <h:commandButton class="button_submit" id="button" value="Login" action="#{loginBean.doLogin(name,password)}"/>
+           <br/>
+
+           <h:messages />
+           <br/>
+
+        </h:form>
+        <br/>     
+        
+        </div>
+    </h:body>
+</html>
+

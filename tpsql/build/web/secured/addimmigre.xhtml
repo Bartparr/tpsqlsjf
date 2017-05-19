@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>ajout d'immigré</title>
+        <h:outputStylesheet library="#{profileBean.theme}" name="css/principal.css"/>
+    </h:head>
+    <h:body>
+        
+        <c:if test="#{profileBean.header=='yes'}">
+           <ui:insert name="header"/>
+           <ui:include src="template/header.xhtml"></ui:include>     
+        </c:if>
+        
+        <ui:insert name="menu"/>
+        <ui:include src="template/menu.xhtml"></ui:include> 
+                
+        
+        
+        <div id="form-wrapper" class="myform">
+            <h1>Ajouter un immigré </h1>
+            <br/>
+        <hr/>
+        <h:form>
+           <h:outputLabel for="name"> Prenom </h:outputLabel>
+           <h:inputText id="name" value="#{prenom}" />
+           <br/>
+           <h:outputLabel for="surname"> Nom </h:outputLabel>
+           <h:inputText id="surname" value="#{nom}" />
+           <br/>
+           <br/>
+           <h:outputLabel for="description"> Description </h:outputLabel>
+           <h:inputText id="description" value="#{description}" />
+           <br/>  
+           <br/>
+           <h:outputLabel for="pays"> pays </h:outputLabel>
+           <h:inputText id="pays" value="#{pays}" />
+           <br/>  
+           <br/>
+           <br/>
+            <h:commandButton class="button_submit" value="valider" action="#{connectSanspapier.addPerson(nom,prenom,description,pays)}"/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            
+       </h:form>
+            <br/>
+     
+        
+        </div>
+    </h:body>
+</html>
+

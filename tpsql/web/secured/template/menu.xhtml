@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+   xmlns:h="http://xmlns.jcp.org/jsf/html"
+   xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+   >
+   <head>
+      <title>menu</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+   </head>
+   <body>
+      <ui:component>     
+        <ul >
+        <h:form class='ul_flex'> 
+            <li class='li_flex'><h:commandButton class="menu_nav" action = "listeimmigre" value = "Liste des immigrés" /></li>
+            <li class='li_flex'><h:commandButton class="menu_nav" action = "listeusers" value = "Liste des utilisateurs" /></li>
+            <li class='li_flex'><h:commandButton class="menu_nav" action = "profile" value = "Modfier votre profil" /></li>
+            <li class='li_flex'><h:commandButton class="menu_nav" action = "addimmigre" value = "Ajouter une demande" /></li>
+            <li class='li_flex'><h:commandButton class="menu_nav" value="Logout" action="#{loginBean.doLogout()}"/></li>
+        </h:form>
+        </ul>           
+      </ui:component>
+   </body>
+</html>
+

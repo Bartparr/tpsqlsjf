@@ -1,0 +1,302 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 17 mai 2017, 12:23:38
+    Author     : ib
+*/
+
+body {
+    background-color: #A9A9A9;
+    margin: 0px;
+    background-image:url(../../resources/images/dark-background.jpg);
+    font: 15px arial, sans-serif;
+}
+.personne {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+}
+.principal {
+    background-color: white;
+    width: 535px;
+    display: flex;
+    flex-direction: row;
+    border: 2px solid black;
+    box-shadow: 3px 3px 2px silver;
+    border-radius: 30px;
+}
+.carreDroite {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-size: 12pt;
+    width: 100px;
+    height: 120px;
+}
+.image {
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    background-color: yellow;
+    text-align: center;
+    margin: auto;
+}
+.carreCentral {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-size: 12pt;
+    width: 250px;
+    height: 120px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.carreGauche {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 130%;
+    text-align: center;
+    font-size: 15pt;
+    width: 150px;
+    height: 120px;
+}
+.poubelle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 30px;
+    height: 50px;
+    margin-left: 10px;
+}
+.form {
+    max-width: 610px;
+    margin: 60px auto;
+}
+.form__header {
+    margin-bottom: 40px;
+}
+.form__title {
+    font-size: 45px;
+    margin: 10px 0;
+}
+.form__instruction {
+    font-size: 22px;
+}
+.form__options {
+    border: none;
+    padding: 0;
+}
+.form__question {
+    font-size: 25px;
+}
+.form__answer {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 23%;
+    margin: 20px 1% 20px 0;
+    height: 70px;
+    vertical-align: top;
+    font-size: 22px;
+    text-align: center;
+}
+.form__button {
+    height: 40px;
+    border: none;
+    background-color: lightblue;
+    color: gray;
+    text-transform: uppercase;
+    font-family: 'Source Sans Pro', sans-serif;
+    padding: 0 20px;
+    border-radius: 20px;
+    font-weight: 900;
+    cursor: pointer;
+    margin: 20px 0;
+    transition: all .25s ease-in-out;
+    &:hover, &:focus {
+        background-color: wheat;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, .25);
+        outline: none;
+    }
+}
+/* Input style */
+
+input[type="radio"] {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+input[type="radio"]:active ~ label {
+    opacity: 1;
+}
+input[type="radio"]:checked ~ label {
+    opacity: 1;
+    border: 1px solid red;
+}
+/* Footer Styles */
+
+footer {
+    background-color: whitesmoke;
+    position: relative;
+    padding: 20px;
+    h2, h3, p, ul {
+        max-width: 610px;
+        margin: 20px auto;
+    }
+}
+.footer__title {
+    font-size: 30px;
+    margin-top: 40px;
+    color: whitesmoke;
+}
+.footer__subtitle {
+    font-size: 22px;
+}
+.footer__parragraph {
+    line-height: 1.5em;
+    font-size: 22px;
+    a {
+        color: red;
+    }
+}
+.form_fieldset {
+    background-color: whitesmoke;
+    padding: 10px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    border-radius: 10px;
+}
+.form_legend {
+    margin-left: auto;
+    margin-right: auto;
+}
+/* ----------- My Form ----------- */
+
+.myform {
+    margin: 0 auto;
+    width: 509px;
+    padding: 14px;
+}
+/* ----------- form-wrapper ----------- */
+
+#form-wrapper {
+    background: none repeat scroll 0 0 #C6C6C6;
+    border: 2px solid #8B8B8B;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -op-border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
+#form-wrapper h1 {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+#form-wrapper p {
+    font-size: 11px;
+    color: #666666;
+    margin-bottom: 20px;
+    border-bottom: solid 1px #7E7E7E;
+    padding-bottom: 10px;
+}
+#form-wrapper label {
+    display: block;
+    font-weight: bold;
+    text-align: right;
+    width: 193px;
+    float: left;
+}
+#form-wrapper .small {
+    color: #666666;
+    display: block;
+    font-size: 11px;
+    font-weight: normal;
+    text-align: right;
+    width: 193px;
+}
+#form-wrapper input,
+#form-wrapper textarea {
+    float: left;
+    border: solid 1px #aacfe4;
+    width: 284px;
+    margin: 2px 0 20px 10px;
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    -op-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    font-size: 14px;
+}
+#form-wrapper input {
+    height: 25px;
+    padding: 4px 10px;
+}
+#form-wrapper textarea {
+    padding: 10px 10px;
+    overflow: auto;
+}
+/* ----------- Form Button ----------- */
+
+.button_submit {
+    margin-left: auto;
+    margin-right: auto;
+    background: #2c3e4a;
+    background: -webkit-gradient(linear, left top, left bottom, from(#919496), to(#2c3e4a));
+    background: -webkit-linear-gradient(top, #919496, #2c3e4a);
+    background: -moz-linear-gradient(top, #919496, #2c3e4a);
+    background: -ms-linear-gradient(top, #919496, #2c3e4a);
+    background: -o-linear-gradient(top, #919496, #2c3e4a);
+    padding: 5px 10px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    margin-left: 315px;
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    vertical-align: middle;
+}
+.button_submit:hover {
+    background: #3d4b54;
+    color: #ccc;
+}
+
+
+
+.menu_nav {
+    background-color: #333;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    color: whitesmoke;
+    font: 15px arial, sans-serif;
+    
+}
+
+.menu_nav:hover {
+    background-color: lightblue;
+}
+
+.ul_flex{
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.li_flex{
+}

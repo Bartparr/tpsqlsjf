@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Page d'accueil</title>
+        <h:outputStylesheet library="#{profileBean.theme}" name="css/principal.css"/>
+    </h:head>
+    
+    <h:body  >
+        <c:if test="#{profileBean.header=='yes'}">   
+           <ui:insert name="header"/>
+           <ui:include src="template/header.xhtml"></ui:include>        
+        </c:if>
+        <ui:insert name="menu"/>
+        <ui:include src="template/menu.xhtml"></ui:include>    
+               
+        <div class="personne"><h1>Liste des sans utilisateurs</h1></div>
+        <h:form>
+               <ui:repeat var="user" value="#{connectUser.getPerson()}" varStatus="status">
+                   <div class="personne">
+                       <div class="principal">
+                           <div class="carreGauche">
+                               <div><h:outputText value="#{user.getName()}"></h:outputText></div>
+                               <div><h:outputText value="#{user.getSurname()}"></h:outputText></div>  
+                            
+                           </div>                            
+                           <div class="carreCentral">
+                               <fieldset>
+                                   <legend><strong>Description</strong></legend>
+                                   <h:outputText value="#{user.getDescription()}"></h:outputText>
+                                   <div> admin: <h:outputText value="#{user.getIsAdmin()}"></h:outputText></div> 
+                                   <div> pswd:<h:outputText value="#{user.getPassword()}"></h:outputText></div> 
+                                   <div>theme: <h:outputText value="#{user.getTheme()}"></h:outputText></div> 
+                               </fieldset>
+                           </div>                            
+                           <div class="carreDroite">   
+                           <div class="nationalite">
+                              
+                           </div>
+                               
+                               <div class="poubelle">
+                                 <div><h:commandButton  image="../resources/images/poubelle.png" alt="Corbeille" style="width:50px;height:50px;" action="#{userImm.removePersonn(user.getId())}" /></div>                                 
+                               </div> 
+                           </div>
+                       </div>
+                  
+                   </div>
+               </ui:repeat>
+        </h:form>
+
+
+
+    </h:body>
+</html>
+
